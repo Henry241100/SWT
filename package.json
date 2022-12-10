@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "audic": "^3.0.1",
-    "socket.io": "^2.3.0"
-  }
-}
