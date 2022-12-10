@@ -6,9 +6,9 @@ const FOOD_COLOUR = '#e61919';
 let Tod = new Audio('https://fom-hll.coletta.de/Sounds/roblox-death-sound-effect.mp3');
 let Hintergrundmusik = new Audio('https://fom-hll.coletta.de/Sounds/Snake Music.mp3');
 //let Essen = new Audio('Snake Web Technologie/Henry/15.11.2022/multiplayerSnake-master/Sounds/Essen.mp3');
-//const socket = io('https://sleepy-island-33889.herokuapp.com/');
-const socket = io('https://snakewebtechnologie.herokuapp.com/');
+//const socket = io('https://snakewebtechnologie.herokuapp.com/');
 
+const socket = io('http://localhost:3000');
 
 socket.on('init', handleInit);
 socket.on('gameState', handleGameState);
