@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"> 
+  
+ <!-- Material Design Lite -->
+ <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+ <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+ <!-- Material Design icon font -->
+ <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <title>MultiPlayer Snake</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="index.css">
+
+</head>    
+<body>
+  <div class="topnav">
+    <a class="active" href="https://fom-hll.coletta.de/frontend/index.html">Home</a>
+    <a href="https://fom-hll.coletta.de/frontend/Impressum.html">Impressum</a> </a>
+    <a href="https://de.wikipedia.org/wiki/Snake_(Computerspiel)">Wikipedia Snake</a> </a>
+    <a href="https://fom-hll.coletta.de/frontend/Datenschutz.html"> Datenschutz</a>
+  </div>
+  </div>
+  <section class="vh-100">
+    <div class="container h-100">
+
+      <div id="initialScreen" class="h-50">
+        <div class="d-flex flex-column align-items-center justify-content-center h-100">
+            <h1>Unser Snake Webprojekt </h1>
+
+            <button
+              type="submit"
+              class="btn btn-success"
+              id="newGameButton"
+            >
+              Neues Spiel erstellen
+            </button>
+            <div>Oder</div>
+            <div class="form-group">
+              <input type="text" placeholder="Code eingeben" id="gameCodeInput"/>
+            </div>
+            <button
+              type="submit"
+              class="btn btn-success"
+              id="joinGameButton"
+            >
+              Spiel beitreten
+            </button>
+        </div>
+      </div>
+
+      <div id="gameScreen" class="h-1000">
+        <div class="d-flex flex-column align-items-center justify-content-center h-100">
+                <h2 id="Textoben">Dein Code ist: <span id="gameCodeDisplay"></span></h2>
+            <div class="content">   
+              <div class="wrapper"> 
+              <canvas id="canvas"></canvas> 
+              <img id="fruit" src="images/apple.png">
+              <img id="poison" src="images/virus.png">
+              <img id="Kopf" src="images/SC.jpg">
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>    
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.4.0/socket.io.js"></script>
+  <script src="index.js"></script>
+  <script src="/Snake Web Technologie/Master/4/multiplayerSnake-master/server/game.js"></script>
+</body>
+</html>
