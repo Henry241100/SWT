@@ -80,6 +80,7 @@ function gameLoop(state) {
     if (playerOne.pos.x > GRID_SIZE/2){  playerOne.vel.x=-1}
     else  playerOne.vel.x=1
   }
+  
   for (k; k < 1; k++) {
     if (playerTwo.pos.x > GRID_SIZE/2){  playerTwo.vel.x=-1}
     else  playerTwo.vel.x=1
@@ -180,33 +181,29 @@ function gameLoop(state) {
 
   return false;
 }
-
 function randomFood(state) {
-  food=state.food
-
-  poison = state.poison
-  poison2 = state.poison2
+  food={
+    x: Math.floor(Math.random() * GRID_SIZE),
+    y: Math.floor(Math.random() * GRID_SIZE),
+  }
 
   for (let cell of state.players[0].snake) {
     if (cell.x === food.x && cell.y === food.y) {
-      food = {
-      x: Math.floor(Math.random() * GRID_SIZE),
-      y: Math.floor(Math.random() * GRID_SIZE),
-      }
       return randomFood(state);
     }
   }
 
   for (let cell of state.players[1].snake) {
-    food = {
-      x: Math.floor(Math.random() * GRID_SIZE),
-      y: Math.floor(Math.random() * GRID_SIZE),
-      }
     if (cell.x === food.x && cell.y === food.y) {
       return randomFood(state);
-    
     }
   }
+  
+  state.food = food;
+
+
+  poison = state.poison
+  poison2 = state.poison2
 
   poison = {
     x: Math.floor(Math.random() * GRID_SIZE),
@@ -219,8 +216,9 @@ function randomFood(state) {
       y: Math.floor(Math.random() * GRID_SIZE),
       }
       state.poison2 = poison2
-    state.food = food;
+
 }
+
 
 
 function getUpdatedVelocity(keyCode) {
