@@ -4,7 +4,7 @@ const SNAKE_COLOUR = '#add8e6';
 const SNAKE_BORDER = 'darkblue';
 const FOOD_COLOUR = '#e61919';
 let Tod = new Audio('https://fom-hll.coletta.de/Sounds/roblox-death-sound-effect.mp3');
-let Hintergrundmusik = new Audio('https://fom-hll.coletta.de/Sounds/Snake Music.mp3');
+let Hintergrundmusik = new Audio('https://fom-hll.coletta.de/Sounds/The-entertainer-piano.mp3');
 
 Hintergrundmusik.addEventListener('ended', function() {
   this.currentTime = 0;
