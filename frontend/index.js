@@ -3,6 +3,8 @@ const BG_BORDER = 'black';
 const SNAKE_COLOUR = '#add8e6';
 const SNAKE_BORDER = 'darkblue';
 const FOOD_COLOUR = '#e61919';
+
+//Volume-----------------------
 let Tod = new Audio('https://fom-hll.coletta.de/Sounds/roblox-death-sound-effect.mp3');
 let Hintergrundmusik = new Audio('https://fom-hll.coletta.de/Sounds/The-entertainer-piano.mp3');
 
@@ -10,6 +12,40 @@ Hintergrundmusik.addEventListener('ended', function() {
   this.currentTime = 0;
   this.play();
 }, false);
+
+var posSlider =document.getElementById("myRange");
+var volSlider = document.getElementById("myVol");
+var startBut = document.getElementById("startButton");
+var pauseBut = document.getElementById("pauseButton");
+
+
+startBut.addEventListener("click", audioPlay);
+
+function audioPlay(){
+Hintergrundmusik.play();
+Hintergrundmusik.addEventListener("timeupdate", setSliderVal);
+}
+
+function setSliderVal(){
+posSlider.value = Hintergrundmusik.currentTime;
+}
+
+pauseBut.addEventListener("click", audioPause);
+
+function audioPause(){
+Hintergrundmusik.pause();
+}
+
+function setPos() {
+Hintergrundmusik.currentTime = posSlider.value;
+}
+
+volSlider.addEventListener("input", setVol);
+
+function setVol() {
+Hintergrundmusik.volume = volSlider.value / 100;
+}
+//Volume---------------
 
 const socket = io('https://snakewebtechnologie.herokuapp.com/');
 
