@@ -8,7 +8,10 @@ const FOOD_COLOUR = '#e61919';
 let Tod = new Audio('https://fom-hll.coletta.de/Sounds/roblox-death-sound-effect.mp3');
 let Hintergrundmusik = new Audio('https://fom-hll.coletta.de/Sounds/The-entertainer-piano.mp3');
 
+
+
 Hintergrundmusik.addEventListener('ended', function() {
+  this.volume = 0.2;
   this.currentTime = 0;
   this.play();
 }, false);
@@ -19,7 +22,6 @@ var startBut = document.getElementById("startButton");
 var pauseBut = document.getElementById("pauseButton");
 
 
-startBut.addEventListener("click", audioPlay);
 
 function audioPlay(){
 Hintergrundmusik.play();
@@ -43,12 +45,12 @@ Hintergrundmusik.currentTime = posSlider.value;
 volSlider.addEventListener("input", setVol);
 
 function setVol() {
-Hintergrundmusik.volume = volSlider.value / 100;
+Hintergrundmusik.volume = volSlider.value / 200;
 }
 //Volume---------------
 
-const socket = io('https://snakewebtechnologie.herokuapp.com/');
-
+//const socket = io('https://snakewebtechnologie.herokuapp.com/');
+const socket = io('http://localhost:3000');
 
 
 
@@ -92,6 +94,7 @@ let gameActive = false;
 
 function init() {
   Hintergrundmusik.play();
+  Hintergrundmusik.volume = 0.2;
   initialScreen.style.display = "none";
   gameScreen.style.display = "block";
 
@@ -145,7 +148,6 @@ function paintPlayer(playerState, size, colour) {
     ctx.fillRect(cell.x * size, cell.y * size, size, size);
   }
     ctx.drawImage(Schlangenkopf, pos.x*size, pos.y*size, size, size);
-
 }
 
 function handleInit(number) {
