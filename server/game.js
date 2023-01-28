@@ -1,5 +1,6 @@
 const { GRID_SIZE } = require('./constants');
 
+
 module.exports = {
   initGame,
   gameLoop,
@@ -46,11 +47,14 @@ function createGameState() {
           y: Math.floor(Math.random() * GRID_SIZE)},
       ],
     }],
-    food: {x: 50,
+    food: 
+          {x: 50,
            y: 50,},
-    poison:  {x: Math.floor(Math.random() * GRID_SIZE), 
+    poison:  
+    {x: Math.floor(Math.random() * GRID_SIZE), 
       y: Math.floor(Math.random() * GRID_SIZE)},
-      poison2:  {x: Math.floor(Math.random() * GRID_SIZE), 
+      poison2:  
+      {x: Math.floor(Math.random() * GRID_SIZE), 
         y: Math.floor(Math.random() * GRID_SIZE)},
     gridsize: GRID_SIZE,
   };
@@ -77,13 +81,13 @@ function gameLoop(state) {
   playerTwo.snake.y = playerTwo.pos.y;
 
   for (i; i < 1; i++) {
-    if (playerOne.pos.x > GRID_SIZE/2){  playerOne.vel.x=-1}
-    else  playerOne.vel.x=1
+    if (playerOne.pos.x > GRID_SIZE/2){  playerOne.vel.x=0}
+    else  playerOne.vel.x=0
   }
   
   for (k; k < 1; k++) {
-    if (playerTwo.pos.x > GRID_SIZE/2){  playerTwo.vel.x=-1}
-    else  playerTwo.vel.x=1
+    if (playerTwo.pos.x > GRID_SIZE/2){  playerTwo.vel.x=-0}
+    else  playerTwo.vel.x=0
   }
 
   if (playerOne.pos.x < 0 || playerOne.pos.x > GRID_SIZE || playerOne.pos.y < 0 || playerOne.pos.y > GRID_SIZE) {
@@ -202,8 +206,9 @@ function randomFood(state) {
   state.food = food;
 
 
-  poison = state.poison
+  poison = state.poison;
   poison2 = state.poison2
+
 
   poison = {
     x: Math.floor(Math.random() * GRID_SIZE),
@@ -216,7 +221,6 @@ function randomFood(state) {
       y: Math.floor(Math.random() * GRID_SIZE),
       }
       state.poison2 = poison2
-
 }
 
 
