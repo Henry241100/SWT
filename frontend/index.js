@@ -91,10 +91,10 @@ function init() {
   ctx = canvas.getContext('2d');
 
 if (window.innerHeight < window.innerWidth){
-    canvas.width = canvas.height = window.innerHeight-100;
+    canvas.width = canvas.height = window.innerHeight;
 }    
 else {
-    canvas.width = canvas.height = window.innerWidth-100;
+    canvas.width = canvas.height = window.innerWidth;
 }
 
   ctx.fillStyle = BG_COLOUR;
