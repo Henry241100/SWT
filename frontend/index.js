@@ -1,8 +1,10 @@
 const BG_COLOUR = 'white';
 const BG_BORDER = 'black';
-const SNAKE_COLOUR = '#add8e6';
+const SNAKE_COLOUR = 'darkblue';
 const SNAKE_BORDER = 'darkblue';
 const FOOD_COLOUR = '#e61919';
+
+
 
 //Volume-----------------------
 let Tod = new Audio('https://fom-hll.coletta.de/Sounds/roblox-death-sound-effect.mp3');
@@ -16,30 +18,14 @@ Hintergrundmusik.addEventListener('ended', function() {
   this.play();
 }, false);
 
-var posSlider =document.getElementById("myRange");
+
 var volSlider = document.getElementById("myVol");
-var startBut = document.getElementById("startButton");
 var pauseBut = document.getElementById("pauseButton");
-
-
-
-function audioPlay(){
-Hintergrundmusik.play();
-Hintergrundmusik.addEventListener("timeupdate", setSliderVal);
-}
-
-function setSliderVal(){
-posSlider.value = Hintergrundmusik.currentTime;
-}
 
 pauseBut.addEventListener("click", audioPause);
 
 function audioPause(){
 Hintergrundmusik.pause();
-}
-
-function setPos() {
-Hintergrundmusik.currentTime = posSlider.value;
 }
 
 volSlider.addEventListener("input", setVol);
@@ -48,7 +34,7 @@ function setVol() {
 Hintergrundmusik.volume = volSlider.value / 200;
 }
 //Volume---------------
-
+// Henry
 //const socket = io('https://snakewebtechnologie.herokuapp.com/');
 const socket = io('http://localhost:3000');
 
@@ -59,7 +45,7 @@ socket.on('gameState', handleGameState);
 socket.on('gameOver', handleGameOver);
 socket.on('gameCode', handleGameCode);
 socket.on('unknownCode', handleUnknownCode);
-socket.on('tooManyPlayers', handleTooManyPlayers);
+socket.on('tooManyPlayers', handleTooManyPlayers);//Henry//
 
 const gameScreen = document.getElementById('gameScreen');
 const initialScreen = document.getElementById('initialScreen');
@@ -71,6 +57,9 @@ const Textoben = document.getElementById('Textoben');
 const fruit = document.getElementById('fruit');
 const poison = document.getElementById('poison');
 const Schlangenkopf = document.getElementById('Kopf');
+
+
+// Henry
 newGameBtn.addEventListener('click', newGame);
 joinGameBtn.addEventListener('click', joinGame);
 
@@ -85,7 +74,7 @@ function joinGame() {
   const code = gameCodeInput.value;
   socket.emit('joinGame', code);
   init();
-}
+}// Henry
 
 let canvas, ctx;
 let playerNumber;
@@ -116,10 +105,10 @@ else {
 
 
 
-
+//Henry
 function keydown(e) {
   socket.emit('keydown', e.keyCode);
-}
+}// Henry
 
 function paintGame(state) {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -149,7 +138,7 @@ function paintPlayer(playerState, size, colour) {
   }
     ctx.drawImage(Schlangenkopf, pos.x*size, pos.y*size, size, size);
 }
-
+//Henry
 function handleInit(number) {
   playerNumber = number;
 }
@@ -198,13 +187,14 @@ function handleUnknownCode() {
 function handleTooManyPlayers() {
   reset();
   alert('Das Spiel läuft schon. Du kannst nicht mehr joinen');
-}
+}//Henry
 
 function reset() {
   playerNumber = null;
   gameCodeInput.value = '';
   initialScreen.style.display = "block";
   gameScreen.style.display = "none";
+  Hintergrundmusik.pause()
 }
 
 //verhindert Runterscollen wenn Tasten gedrückt werden
@@ -213,3 +203,58 @@ window.addEventListener("keydown", function(e) {
       e.preventDefault();
   }
 }, false)
+
+
+// Leon
+document.addEventListener('touchstart', handleTouchStart, {passive: false});        
+document.addEventListener('touchmove', handleTouchMove, {passive: false});
+
+
+var xDown = null;                                                        
+var yDown = null;
+
+function getTouches(evt) {
+  return evt.touches ||             // browser API
+         evt.originalEvent.touches; // jQuery
+}                                                     
+                                                                         
+function handleTouchStart(evt) {
+    const firstTouch = getTouches(evt)[0];                                      
+    xDown = firstTouch.clientX;                                      
+    yDown = firstTouch.clientY;                                      
+};                                                
+                                                                         
+function handleTouchMove(evt) {
+    if ( ! xDown || ! yDown ) {
+        return;
+    }
+
+    var xUp = evt.touches[0].clientX;                                    
+    var yUp = evt.touches[0].clientY;
+
+    var xDiff = xDown - xUp;
+    var yDiff = yDown - yUp;
+                                                                         
+    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
+        if ( xDiff > 0 ) {
+          socket.emit('SwipeLeft');
+
+        } else {
+          socket.emit('SwipeRight');
+
+        }                       
+    } else {
+        if ( yDiff > 0 ) {
+          socket.emit('SwipeUp');
+
+        } else { 
+          socket.emit('SwipeDown');
+
+        }                                                                 
+    }
+    /* Zurücksetzen der Werte */
+    xDown = null;
+    yDown = null;                                             
+};
+
+

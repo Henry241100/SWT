@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+    touch-action: none;
   }
   
   .topnav {
@@ -23,6 +24,7 @@ body {
   }
   #gameScreen {
     display: none;
+    touch-action: none;
   }
   
   #newGameButton {
@@ -59,6 +61,7 @@ body {
       background-image: url(./images/green.jpg);
       background-repeat: no-repeat;
       background-size: cover;
+      touch-action: none;
   }
   #fruit {
       display: none;
