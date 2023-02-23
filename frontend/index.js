@@ -94,7 +94,7 @@ if (window.innerHeight < window.innerWidth){
     canvas.width = canvas.height = window.innerHeight-115;
 }    
 else {
-    canvas.width = canvas.height = window.innerWidth-115;
+    canvas.width = canvas.height = window.innerWidth;
 }
 
   ctx.fillStyle = BG_COLOUR;
