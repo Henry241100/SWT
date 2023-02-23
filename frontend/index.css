@@ -17,6 +17,8 @@ body {
     text-decoration: none;
     font-size: 17px;
   }
+
+  h1 { text-align: center; }
   
   .topnav a.active {
     background-color: #496d00;
@@ -24,7 +26,7 @@ body {
   }
   #gameScreen {
     display: none;
-
+    touch-action: none;
   }
   
   #newGameButton {
