@@ -7,7 +7,7 @@ const FOOD_COLOUR = '#e61919';
 
 
 //Volume-----------------------
-let Tod = new Audio('https://fom-hll.coletta.de/Sounds/roblox-death-sound-effect.mp3');
+let Tod = new Audio('https://fom-hll.coletta.de/Sounds/Tod.mp3');
 let Hintergrundmusik = new Audio('https://fom-hll.coletta.de/Sounds/The-entertainer-piano.mp3');
 
 
