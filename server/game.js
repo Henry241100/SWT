@@ -81,12 +81,12 @@ function gameLoop(state) {
   playerTwo.snake.y = playerTwo.pos.y;
 
   for (i; i < 1; i++) {
-    if (playerOne.pos.x > GRID_SIZE/2){  playerOne.vel.x=0}
+    if (playerOne.pos.x > GRID_SIZE/2){  playerOne.vel.x=1}
     else  playerOne.vel.x=0
   }
   
   for (k; k < 1; k++) {
-    if (playerTwo.pos.x > GRID_SIZE/2){  playerTwo.vel.x=-0}
+    if (playerTwo.pos.x > GRID_SIZE/2){  playerTwo.vel.x=-1}
     else  playerTwo.vel.x=0
   }
 
