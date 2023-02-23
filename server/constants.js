@@ -8,6 +8,7 @@ module.exports = {
   makeid,
 }
 
+
 function makeid(length) {
    var result           = '';
    var characters       = '0123456789';

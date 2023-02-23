@@ -10,8 +10,24 @@ const clientRooms = {};
 io.on('connection', client => {
 
   client.on('keydown', handleKeydown);
+  client.on('SwipeLeft', handleSwipeleft);
+  client.on('SwipeRight', handleSwiperight);
+  client.on('SwipeUp', handleSwipeup);
+  client.on('SwipeDown', handleSwipedown);
   client.on('newGame', handleNewGame);
   client.on('joinGame', handleJoinGame);
+
+  function handleNewGame() {
+    let roomName = makeid(5);
+    clientRooms[client.id] = roomName;
+    client.emit('gameCode', roomName);
+
+    state[roomName] = initGame();
+
+    client.join(roomName);
+    client.number = 1;
+    client.emit('init', 1);
+  }
 
   function handleJoinGame(roomName) {
     const room = io.sockets.adapter.rooms[roomName];
@@ -43,17 +59,7 @@ io.on('connection', client => {
     startGameInterval(roomName);
   }
 
-  function handleNewGame() {
-    let roomName = makeid(5);
-    clientRooms[client.id] = roomName;
-    client.emit('gameCode', roomName);
 
-    state[roomName] = initGame();
-
-    client.join(roomName);
-    client.number = 1;
-    client.emit('init', 1);
-  }
 
 
 
@@ -68,14 +74,67 @@ io.on('connection', client => {
       console.error(e);
       return;
     }
-
     const vel = getUpdatedVelocity(keyCode);
-
     if (vel) {
       state[roomName].players[client.number - 1].vel = vel;
     }
+    
   }
+
+function handleSwipeleft() {
+  const roomName = clientRooms[client.id];
+  if (!roomName) {
+    return;
+  }
+  const vel = getUpdatedVelocity(37);
+  if (vel) {
+    state[roomName].players[client.number - 1].vel = vel;
+  }
+  
+}
+
+function handleSwiperight() {
+  const roomName = clientRooms[client.id];
+  if (!roomName) {
+    return;
+  }
+  const vel = getUpdatedVelocity(39);
+  if (vel) {
+    state[roomName].players[client.number - 1].vel = vel;
+  }
+  
+}
+
+function handleSwipeup() {
+  const roomName = clientRooms[client.id];
+  if (!roomName) {
+    return;
+  }
+  const vel = getUpdatedVelocity(38);
+  if (vel) {
+    state[roomName].players[client.number - 1].vel = vel;
+  }
+  
+}
+
+function handleSwipedown() {
+  const roomName = clientRooms[client.id];
+  if (!roomName) {
+    return;
+  }
+  const vel = getUpdatedVelocity(40);
+  if (vel) {
+    state[roomName].players[client.number - 1].vel = vel;
+  }
+  
+}
+
+
+
 });
+
+
+
 
 function startGameInterval(roomName) {
   const intervalId = setInterval(() => {
@@ -92,7 +151,6 @@ function startGameInterval(roomName) {
 }
 
 function emitGameState(room, gameState) {
-  // Send this event to everyone in the room.
   io.sockets.in(room)
     .emit('gameState', JSON.stringify(gameState));
 }
