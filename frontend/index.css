@@ -45,7 +45,7 @@ body {
   max-width: 100%;
   }
 
-  #form-group {  max-width: 100%;
+  #form-group, #h2, #slidecontainer {  max-width: 100%;
   } 
   
   #joinGameButton {
