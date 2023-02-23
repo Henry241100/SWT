@@ -40,7 +40,11 @@ body {
   text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
   text-align:center;
   transition: all 0.2s;
+  max-width: 100%;
   }
+
+  #form-group {  max-width: 100%;
+  } 
   
   #joinGameButton {
   display:inline-block;
@@ -56,6 +60,7 @@ body {
   text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
   text-align:center;
   transition: all 0.2s;
+  max-width: 100%;
   }
   canvas {
       background-image: url(./images/green.jpg);

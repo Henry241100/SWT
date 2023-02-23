@@ -35,8 +35,8 @@ Hintergrundmusik.volume = volSlider.value / 200;
 }
 //Volume---------------
 // Henry
-const socket = io('https://snakewebtechnologie.herokuapp.com/');
-//const socket = io('http://localhost:3000');
+//const socket = io('https://snakewebtechnologie.herokuapp.com/');
+const socket = io('http://localhost:3000');
 
 
 
