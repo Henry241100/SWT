@@ -17,7 +17,7 @@ body {
     font-size: 17px;
   }
 
-  h1 { text-align: center; }
+  
   
   .topnav a.active {
     background-color: #496d00;
@@ -27,7 +27,9 @@ body {
     display: none;
     touch-action: none;
   }
-  
+
+  h1 { text-align: center; }
+
   #newGameButton {
   padding:0.3em 1.2em;
   margin:0 0.1em 0.1em 0;
@@ -80,4 +82,55 @@ body {
   #Kopf {
     display: none;
   }
+
+  #box {
+    fill: darkblue;
+    stroke: darkblue;
+  }
+
+  .float-parent-element { 
+    width: 18%; 
+} 
+.float-child-element { 
+    float: left; 
+    width: 50%; 
+} 
+.box {
+  align-items: center;
+  background-color: darkblue;
+  color: white;
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  position: relative;
+  width: 100px;
+}
+.box:before {
+  content: attr(data-caption);
+  font-size: 13px;
+  left: 5px;
+  position: absolute;
+  text-transform: uppercase;
+  top: 5px;
+}
+
+.box2 {
+  align-items: center;
+  background-color: orange;
+  color: white;
+  display: flex;
+  justify-content: right;
+  height: 50px;
+  position: relative;
+  width: 100px;
+}
+.box2:before {
+  content: attr(data-caption);
+  font-size: 13px;
+  left: 5px;
+  position: absolute;
+  text-transform: uppercase;
+  top: 5px;
+}
+  
 
