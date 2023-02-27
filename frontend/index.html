@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="index.css">
   <meta name="viewport" content="width=device-width">
 </head>    
-<body>
+<body id="body">
   <div id="topnav", class="topnav">
     <a class="active" href="https://fom-hll.coletta.de/frontend/index.html">Home</a>
     <a href="https://fom-hll.coletta.de/frontend/Impressum.html">Impressum</a> </a>
@@ -66,16 +66,18 @@
 </div>
 </div>
       </div>
-
+</body>
         
     
       <div id="gameScreen" class="h-1000">
         <div class="d-flex flex-column align-items-center justify-content-center h-100">
-                <h2 id="Textoben">Dein Code ist: <span id="gameCodeDisplay"></span></h2>
+<div class="form2">
+  <h2 id="Textoben">Dein Code ist: <span id="gameCodeDisplay"></span></h2>
                 <div id="slider" class="slidecontainer">
                   <input type="button" name="button" id="pauseButton" value="pause">
                   Lautstärke: <input type="range" min="0" max="100" value="100" class="slider" id="myVol">
                   </div>
+            </div>
 
             <div class="content">   
               <div class="wrapper"> 
@@ -96,5 +98,5 @@
   <script src="index.js"></script>
   <script src="https://fom-hll.coletta.de//server/game.js"></script>
   <script src="https://fom-hll.coletta.de/server/server.js"></script>
-</body>
+
 </html>

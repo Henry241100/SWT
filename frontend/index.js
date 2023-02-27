@@ -47,6 +47,8 @@ socket.on('gameCode', handleGameCode);
 socket.on('unknownCode', handleUnknownCode);
 socket.on('tooManyPlayers', handleTooManyPlayers);//Henry//
 
+
+const body = document.getElementById('body');
 const topnav = document.getElementById('topnav');
 const slider = document.getElementById('slider');
 const gameScreen = document.getElementById('gameScreen');
@@ -88,10 +90,11 @@ function init() {
   Hintergrundmusik.volume = 0.2;
   initialScreen.style.display = "none";
   gameScreen.style.display = "block";
+  body.style.margin ="0 auto";
 
   canvas = document.getElementById('canvas');
   ctx = canvas.getContext('2d');
-  const toppart= slider.offsetHeight+Textoben.offsetHeight+topnav.offsetHeight
+  const toppart= slider.offsetHeight+Textoben.offsetHeight+topnav.offsetHeight+20
 
 if (window.innerHeight < window.innerWidth){
     canvas.width = canvas.height = window.innerHeight-toppart;
