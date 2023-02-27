@@ -1,4 +1,4 @@
-const BG_COLOUR = 'white';
+const BG_COLOUR = 'black';
 const BG_BORDER = 'black';
 const SNAKE_COLOUR = 'darkblue';
 const SNAKE_BORDER = 'darkblue';
