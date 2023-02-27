@@ -10,7 +10,7 @@
     "version": "^18.12.1",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "heroku-postbuild": "npm run build",
-    "node": "18.12.1"
-  }
+    "heroku-postbuild": "npm run build"
+  },
+  "engines": {"node": "18.x"}
 }
