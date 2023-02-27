@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+ <!-- Material Design Lite -->
+ <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+ <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+ <!-- Material Design icon font -->
+ <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+ <link rel="stylesheet" href="index.css">
+  <title>MultiPlayer Snake</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="index.css">
+
+    </head>
+    <body>
+      <div class="topnav">
+        <a href="https://fom-hll.coletta.de/frontend/index.html">Home</a>
+       <a href="https://fom-hll.coletta.de/frontend/Impressum.html">Impressum</a> </a>
+       <a class="active"href="https://fom-hll.coletta.de/frontend/Spielanleitung.html">Spielanleitung</a> </a>
+             <a href="https://fom-hll.coletta.de/frontend/Datenschutz.html"> Datenschutz</a>
+      </div>
+
+<h4>Spielanleitung</h4>
+<p><strong>Spielprinzip Snake</strong>
+  <br />Snake ist optisch wie auch vom Spielprinzip her sehr einfach gehalten. Im Mittelpunkt steht die Schlangedes Spielers, die die Spielenden in vier Richtungen steuern können.  <br />
+  Links, rechts, oben, unten. Zufällig erscheint auf dem Bildschirm ein Apfel, den man mit dem Kopf der Schlange einfangen muss.  <br />
+  Mit jedem gefressenen Apfel wächst die Gesamtlänge der Schlange um eine Einheit.<br />
+  Zusätzlich befindet sich auf dem Feld zwei Gift Items. Isst eine Schlange das Gift, hat sie sofort verloren und das Spiel ist vorbei.<br />
+  Es gilt also der gegnerischen Schlange und dem Gift auszuweichen und so schnell wie möglich den Apfel zu essen.<br />
+  Somit wird der Platz auf dem Bildschirm immer kleiner, was wiederum den Schwierigkeitsgrad für den Gegner kontinuierlich erhöht. <br />
+  Das Spiel endet, wenn die Schlange den Rand des Spielfeldes oder die gegnerische Schlange berührt.
+
+</p>
+<p><strong>Spiel starten:</strong>
+  <br />Zum Starten des Spiels, drückt der Host auf den Button "Spiel erstellen".
+  <br />Es wird ein Spielcode generiert, damit man zusammen spielen kann.
+  <br />Nachdem der Gast dem Spiel beigetretet ist, geht das Spiel direkt los.</p>
+
+<p><strong>Spiel beitreten:</strong>
+  <br />Wird ein fünfstelliger Spielcode vom Host generiert, wird dem Gast dieser mitgeteilt und er gibt ihn in das Textfeld ein. 
+  <br />Daraufhin muss der Gast auf den Button "Spiel beitreten" drücke und er wird direkt zum Spielfeld weitergeleitet.
+  <br />Das Spiel ist nur zu zweit spielbar und es können somit nicht mehr als zwei Personen in einem Raum das Spiel spielen.</p>
+
+  <p><strong>Steuerung:</strong>
+    <br />Gesteuert werden kann die Schlange über die Pfeiltasten oder W, A, S, D auf dem Computer.
+    <br />Zusätzlich ist es auf Geräten mit Touchscreen möglich die Schlange durch Touchbewegungen steuert. 
+    <br />Dabei reagiert die Schlange auf auf die Richtung eines Swipes und bewegt den Kopf in eben jene Richtung.
+    <br />Die Touchsteuerung funktioniert allerdings nur auf dem Canvas, da der Browser ansonsten die Touchbewegung als scrollen interpretieren könnte. </p>
+  
+

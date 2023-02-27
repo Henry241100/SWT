@@ -17,6 +17,11 @@ body {
     font-size: 17px;
   }
 
+  .spacer
+{
+    width: 100%;
+    height: 100px;
+}
   
   .topnav a.active {
     background-color: #496d00;
@@ -45,8 +50,7 @@ body {
   max-width: 100%;
   }
 
-  #form-group {  max-width: 100%;
-  } 
+  #form-group {  max-width: 100%;} 
   
   #joinGameButton {
   display:inline-block;

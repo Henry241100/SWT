@@ -47,6 +47,8 @@ socket.on('gameCode', handleGameCode);
 socket.on('unknownCode', handleUnknownCode);
 socket.on('tooManyPlayers', handleTooManyPlayers);//Henry//
 
+const topnav = document.getElementById('topnav');
+const slider = document.getElementById('slider');
 const gameScreen = document.getElementById('gameScreen');
 const initialScreen = document.getElementById('initialScreen');
 const newGameBtn = document.getElementById('newGameButton');
@@ -89,9 +91,10 @@ function init() {
 
   canvas = document.getElementById('canvas');
   ctx = canvas.getContext('2d');
+  const toppart= slider.offsetHeight+Textoben.offsetHeight+topnav.offsetHeight
 
 if (window.innerHeight < window.innerWidth){
-    canvas.width = canvas.height = window.innerHeight-115;
+    canvas.width = canvas.height = window.innerHeight-toppart;
 }    
 else {
     canvas.width = canvas.height = window.innerWidth;

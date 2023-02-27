@@ -2,34 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"> 
-  
- <!-- Material Design Lite -->
- <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
- <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
- <!-- Material Design icon font -->
- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <meta name="description" content="Ein Zwei Spieler Multiplayer Snake Spiel. Es ist sowohl auf dem PC, als auch auf mobilen Geräten spielbar">  
+
 
   <title>MultiPlayer Snake</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="index.css">
-  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <meta name="viewport" content="width=device-width">
 </head>    
 <body>
-  <div class="topnav">
+  <div id="topnav", class="topnav">
     <a class="active" href="https://fom-hll.coletta.de/frontend/index.html">Home</a>
     <a href="https://fom-hll.coletta.de/frontend/Impressum.html">Impressum</a> </a>
-    <a href="https://de.wikipedia.org/wiki/Snake_(Computerspiel)">Wikipedia Snake</a> </a>
+    <a href="https://fom-hll.coletta.de/frontend/Spielanleitung.html">Spielanleitung</a> </a>     
     <a href="https://fom-hll.coletta.de/frontend/Datenschutz.html"> Datenschutz</a>
   </div>
+
   </div>
   <section class="vh-100">
     <div class="container h-100">
 
-      <div id="initialScreen" class="h-50">
+      <div id="initialScreen" class="h-1000">
+        <div class="spacer">
+          &nbsp;
+      </div>
         <div class="d-flex flex-column align-items-center justify-content-center h-100">
-            <h1>Multiplayer Snake Webprojekt </h1>
-
+        <div><h1>Multiplayer Snake Webprojekt </h1></div>
+         
             <button
               type="submit"
               class="btn btn-success"
@@ -65,7 +65,7 @@
       <div id="gameScreen" class="h-1000">
         <div class="d-flex flex-column align-items-center justify-content-center h-100">
                 <h2 id="Textoben">Dein Code ist: <span id="gameCodeDisplay"></span></h2>
-                <div class="slidecontainer">
+                <div id="slider" class="slidecontainer">
                   <input type="button" name="button" id="pauseButton" value="pause">
                   Lautstärke: <input type="range" min="0" max="100" value="100" class="slider" id="myVol">
                   </div>
@@ -87,7 +87,7 @@
  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.4.0/socket.io.js"></script>
   <script src="index.js"></script>
-  <script src="/Snake Web Technologie/Master/7_28.01.2023/server/game.js"></script>
-  <script src="/Snake Web Technologie/Master/7_28.01.2023/server/server.js"></script>
+  <script src="https://fom-hll.coletta.de//server/game.js"></script>
+  <script src="https://fom-hll.coletta.de/server/server.js"></script>
 </body>
 </html>
