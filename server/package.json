@@ -1,14 +1,9 @@
 {
   "dependencies": {
-    "serve": "^14.2.0",
     "socket.io": "^2.3.0"
   },
   "scripts": {
-    "dev": "react-scripts start",
-"start": "serve -s build",
-"test": "react-scripts test --env=jsdom",
-"eject": "react-scripts eject",
-"heroku-postbuild": "npm run build"
+    "start": "node server.js"
   },
   "name": "myapp",
   "description": "a really cool app",
