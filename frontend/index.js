@@ -176,6 +176,7 @@ function handleGameOver(data) {
     alert('Du hast verloren');
     reset();
   }
+  Tod.volume = 0.2;
   Tod.play()
 }
 
