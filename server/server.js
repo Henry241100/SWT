@@ -1,9 +1,17 @@
-const io = require('socket.io')();
+//const io = require('socket.io')();
 const { initGame, gameLoop, getUpdatedVelocity} = require('./game');
 const { FRAME_RATE } = require('./constants');
 const { makeid } = require('./constants');
 const state = {};
 const clientRooms = {};
+
+const io = require("socket.io")(httpServer, {
+  cors: {
+    origin: "https://fom-hll.coletta.de/",
+    methods: ["GET", "POST"],
+    credentials: true
+  }
+});
 
 
 
