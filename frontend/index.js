@@ -8,7 +8,7 @@ const FOOD_COLOUR = '#e61919';
 
 //Volume-----------------------
 let Tod = new Audio('https://fom-hll.coletta.de/Sounds/Tod.mp3');
-let Hintergrundmusik = new Audio('https://fom-hll.coletta.de/Sounds/The-entertainer-piano.mp3');
+let Hintergrundmusik = new Audio('https://fom-hll.coletta.de/Sounds/Hintergrundmusik.mp3');
 
 
 
@@ -90,7 +90,6 @@ function init() {
   Hintergrundmusik.volume = 0.2;
   initialScreen.style.display = "none";
   gameScreen.style.display = "block";
-  body.style.margin ="0 auto";
 
   canvas = document.getElementById('canvas');
   ctx = canvas.getContext('2d');
