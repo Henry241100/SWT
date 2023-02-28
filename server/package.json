@@ -1,19 +1,12 @@
 {
   "dependencies": {
-    "node.js": "^0.0.1-security",
-    "serve": "^14.2.0",
-    "socket.io": "^2.5.0"
+    "socket.io": "^2.3.0"
   },
   "scripts": {
-    "dev": "react-scripts start",
-    "start": "serve -s build",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "heroku-postbuild": "npm run build"
+    "start": "node server.js"
   },
   "name": "myapp",
-  "description": "Snake Multiplayer",
+  "description": "a really cool app",
   "version": "1.0.0",
   "engines": {
     "node": "18.x"
