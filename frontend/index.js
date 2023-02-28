@@ -9,6 +9,7 @@ const FOOD_COLOUR = '#e61919';
 //Volume-----------------------
 let Tod = new Audio('https://fom-hll.coletta.de/Sounds/Tod.mp3');
 let Hintergrundmusik = new Audio('https://fom-hll.coletta.de/Sounds/Hintergrundmusik.mp3');
+if ( gameActive = false){Tod.volume = 0.1;}
 
 
 
@@ -16,7 +17,7 @@ Hintergrundmusik.addEventListener('ended', function() {
   this.volume = 0.1;
   this.currentTime = 0;
   this.play();
-  Tod.volume = 0;
+
 }, false);
 
 
