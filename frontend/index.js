@@ -13,7 +13,7 @@ let Hintergrundmusik = new Audio('https://fom-hll.coletta.de/Sounds/Hintergrundm
 
 
 Hintergrundmusik.addEventListener('ended', function() {
-  this.volume = 0.2;
+  this.volume = 0.1;
   this.currentTime = 0;
   this.play();
 }, false);
@@ -31,7 +31,7 @@ Hintergrundmusik.pause();
 volSlider.addEventListener("input", setVol);
 
 function setVol() {
-Hintergrundmusik.volume = volSlider.value / 200;
+Hintergrundmusik.volume = volSlider.value / 400;
 }
 //Volume---------------
 // Henry
