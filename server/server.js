@@ -2,7 +2,7 @@ const io = require('socket.io')({cors: {
   origin: true,
   methods: ["GET", "POST"],
   credentials: true
-}});
+}}); // Durch das Statement wird die CORS Policy eines Browsers so eingestellt, dass das Spiel auf die Seite, wo das SPiel deployed ist, zugreifen kann.
 const { initGame, gameLoop, getUpdatedVelocity} = require('./game');
 const { FRAME_RATE } = require('./constants');
 const { makeid } = require('./constants');
@@ -134,8 +134,6 @@ function handleSwipedown() {
   }
   
 }
-
-
 
 });
 

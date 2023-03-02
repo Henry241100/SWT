@@ -21,7 +21,7 @@ function createGameState() {
       },
       vel: 
       {
-        x: 0,
+        x: 1,
         y: 0,
       },
       snake: [
@@ -36,7 +36,7 @@ function createGameState() {
         y: Math.floor(Math.random() * GRID_SIZE),
       },
       vel: {
-        x: 0,
+        x: 1,
         y: 0,
       },
       snake: [
