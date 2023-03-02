@@ -99,7 +99,7 @@ function init() {
 
 if (window.innerHeight < window.innerWidth){
     canvas.width = canvas.height = window.innerHeight-toppart;
-}    
+}   
 else {
     canvas.width = canvas.height = window.innerWidth;
 }
